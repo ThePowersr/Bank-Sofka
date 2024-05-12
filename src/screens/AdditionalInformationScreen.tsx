@@ -11,12 +11,6 @@ const AdditionalInformationScreen = ({ navigation, route }: Props) => {
 
   const { name, id, logo, date_release, date_revision, description } = route.params.simpleProduct;
 
-  const [loading, setLoading] = useState(true);
-
-  const handleImageLoad = () => {
-    setLoading(false);
-  };
-
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
       <View style={{ width: '90%', alignItems: 'center', flex: 1, paddingTop: 20 }}>

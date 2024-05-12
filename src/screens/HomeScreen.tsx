@@ -8,6 +8,7 @@ import { RootStackParams } from '../navigator/Navigator';
 import { TypeProduct } from '../types/product';
 import useDebounceValue from '../hooks/useDebonceValue';
 import { act } from '@testing-library/react-native';
+import ListProduct from '../components/ListProduct';
 
 
 interface Props extends StackScreenProps<RootStackParams, 'Home'> { };
@@ -62,23 +63,11 @@ const HomeScreen = ({ navigation }: Props) => {
             placeholder='Search...'
             style={{ padding: 10, borderWidth: 0.2, borderRadius: 2 }}
             autoCapitalize='none'
+            value={searchTerm}
             onChangeText={text => setSearchTerm(text)}
           />
         </View>
-        <View style={{ borderWidth: 0.3, borderRadius: 4 }}>
-          <FlatList
-            testID='FlatListProduct'
-            data={data ?? product}
-            keyExtractor={(item, index) => item.id + index}
-            renderItem={({ item }) => (
-              <Product testID={item.id} id={item.id} name={item.name} onPress={() => navigation.navigate("AdditionalInformationScreen", { simpleProduct: item })} />
-            )}
-            ItemSeparatorComponent={() => <ItemSeparator />}
-            ListEmptyComponent={() => (
-              <Text style={{ textAlign: 'center' }} testID='text-no-product'>No se encontraron productos</Text>
-            )}
-          />
-        </View>
+        <ListProduct testID={'list-product'} data={data ?? product} navigation={navigation} />
       </View>
     </View >
   )

@@ -13,7 +13,7 @@ const FadeInImage = ({ uri, style }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const finishLoading = () => {
-    setIsLoading(false)
+    setIsLoading(false);
     fadeIn(1000);
   }
 
@@ -23,10 +23,11 @@ const FadeInImage = ({ uri, style }: Props) => {
       alignItems: 'center'
     }}>
       {
-        isLoading && <ActivityIndicator style={{ position: 'absolute' }} size={30} />
+        isLoading && <ActivityIndicator style={{ position: 'absolute' }} size={30} testID='activity-indicator' />
       }
-
       <Animated.Image
+        testID='image'
+        accessibilityLabel={'image'}
         source={{ uri }}
         onLoadEnd={finishLoading}
         style={{

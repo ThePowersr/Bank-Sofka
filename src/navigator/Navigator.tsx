@@ -5,10 +5,12 @@ import HomeScreen from '../screens/HomeScreen';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import AdditionalInformationScreen from '../screens/AdditionalInformationScreen';
 import { TypeProduct } from '../types/product';
+import ProductRegistrationScreen from '../screens/ProductRegistrationScreen';
 
 export type RootStackParams = {
   Home: undefined,
   AdditionalInformationScreen: { simpleProduct: TypeProduct },
+  ProductRegistrationScreen: undefined;
 }
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -36,6 +38,7 @@ const Navigator = () => {
       >
         <Stack.Screen name='Home' component={HomeScreen} />
         <Stack.Screen name="AdditionalInformationScreen" component={AdditionalInformationScreen} options={{ headerBackVisible: false }} />
+        <Stack.Screen name='ProductRegistrationScreen' component={ProductRegistrationScreen} options={{ headerBackVisible: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )

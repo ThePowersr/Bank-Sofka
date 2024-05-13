@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Animated, Easing } from 'react-native'
 
 const useAnimation = () => {
@@ -36,12 +36,12 @@ const useAnimation = () => {
     ).start();
   }
 
-  const startMovingPosition = (initPosition: number, duration: number) => {
+  const startMovingPosition = (initPosition: number, duration: number, toValue: number = 0) => {
     position.setValue(initPosition);
     Animated.timing(
       position,
       {
-        toValue: 0,
+        toValue: toValue ?? 0,
         duration,
         useNativeDriver: true,
         easing: Easing.bounce

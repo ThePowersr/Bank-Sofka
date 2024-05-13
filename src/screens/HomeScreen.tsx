@@ -1,14 +1,14 @@
-import { FlatList, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import Product from '../components/Product';
+import { TextInput, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import apiInstance from '../hooks/apiInstance';
-import ItemSeparator from '../components/ItemSeparator';
+import UseApiInstance from '../hooks/UseApiInstance';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParams } from '../navigator/Navigator';
 import { TypeProduct } from '../types/product';
 import useDebounceValue from '../hooks/useDebonceValue';
 import { act } from '@testing-library/react-native';
 import ListProduct from '../components/ListProduct';
+import ButtonCustom from '../components/ButtonCustom';
+import { useFocusEffect } from '@react-navigation/native';
 
 
 interface Props extends StackScreenProps<RootStackParams, 'Home'> { };
@@ -20,12 +20,11 @@ const HomeScreen = ({ navigation }: Props) => {
   const [data, setData] = useState<TypeProduct[] | null>(null);
   const [originalData, setOriginalData] = useState<TypeProduct[] | null>(null);
 
-
   const debouncedSearchTerm = useDebounceValue(searchTerm);
 
   const fetchProducts = async () => {
     try {
-      const response = await apiInstance.get('/bp/products');
+      const response = await UseApiInstance.get('/bp/products');
       act(() => {
         setProduct(response.data);
         setOriginalData(response.data);
@@ -35,9 +34,9 @@ const HomeScreen = ({ navigation }: Props) => {
     }
   };
 
-  useEffect(() => {
+  useFocusEffect(() => {
     fetchProducts();
-  }, [])
+  })
 
   const handleSearch = () => {
     if (debouncedSearchTerm) {
@@ -68,6 +67,7 @@ const HomeScreen = ({ navigation }: Props) => {
           />
         </View>
         <ListProduct testID={'list-product'} data={data ?? product} navigation={navigation} />
+        <ButtonCustom text='Agregar' onPress={() => navigation.navigate('ProductRegistrationScreen')} />
       </View>
     </View >
   )

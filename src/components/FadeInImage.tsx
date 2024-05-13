@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import { useState } from 'react'
 import { ActivityIndicator, Animated, ImageStyle, StyleProp, View } from 'react-native';
 import useAnimation from '../hooks/useAnimation';
+import { act } from '@testing-library/react-native';
 
 interface Props {
   uri: string;
@@ -13,8 +14,10 @@ const FadeInImage = ({ uri, style }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const finishLoading = () => {
-    setIsLoading(false);
-    fadeIn(1000);
+    act(() => {
+      setIsLoading(false);
+      fadeIn(1000);
+    })
   }
 
   return (

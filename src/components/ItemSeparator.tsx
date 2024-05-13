@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 import { View } from 'react-native'
 
 const ItemSeparator = () => {

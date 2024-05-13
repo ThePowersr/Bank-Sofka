@@ -8,7 +8,9 @@ describe("render component <FadeInImage/>", () => {
     const { getByTestId, getByLabelText, debug } = render(
       <FadeInImage uri={uri} style={{ width: 100, height: 100 }} />
     );
-    expect(getByTestId('activity-indicator')).toBeTruthy();
+    await act(() => {
+      expect(getByTestId('activity-indicator')).toBeTruthy();
+    })
   });
 
   it('onLoadEnd show image', async () => {

@@ -17,9 +17,10 @@ const ListProduct = (props: Props) => {
   const { data, navigation, testID } = props;
 
   return (
-    <View testID={testID} style={{ borderWidth: 0.3, borderRadius: 4 }}>
+    <View testID={testID} style={{ borderWidth: 0.3, borderRadius: 4, maxHeight: '65%' }}>
       <FlatList
         testID='FlatListProduct'
+        showsVerticalScrollIndicator={false}
         data={data}
         keyExtractor={(item, index) => item.id + index}
         renderItem={({ item }) => (

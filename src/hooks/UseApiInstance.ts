@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 const authorId = process.env.EXPO_PUBLIC_AUTHOR_ID;
 
-const apiInstance = axios.create({
+const UseApiInstance = axios.create({
   baseURL: API_URL,
   headers: {
     authorId: authorId
@@ -11,4 +11,4 @@ const apiInstance = axios.create({
   maxRedirects: 1
 });
 
-export default apiInstance;
+export default UseApiInstance;

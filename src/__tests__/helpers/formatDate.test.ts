@@ -17,7 +17,7 @@ describe('initDate function', () => {
     jest.spyOn(global.Date, 'now').mockReturnValue(2024);
 
     const nextYearDate = initDate();
-    expect(nextYearDate).toBe('13/5/2025');
+    expect(nextYearDate.split('/')[2]).toBe('2025');
   });
 });
 

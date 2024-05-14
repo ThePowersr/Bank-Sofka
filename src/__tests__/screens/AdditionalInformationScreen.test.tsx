@@ -2,7 +2,6 @@ import React from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import AdditionalInformationScreen from '../../screens/AdditionalInformationScreen';
 import { formatDate } from '../../helpers/formatDate';
-import { Animated } from 'react-native';
 
 const mockRoute: any = {
   params: {

@@ -34,6 +34,10 @@ const HomeScreen = ({ navigation }: Props) => {
     }
   };
 
+  useEffect(() => {
+    fetchProducts();
+  }, [])
+
   useFocusEffect(() => {
     fetchProducts();
   })

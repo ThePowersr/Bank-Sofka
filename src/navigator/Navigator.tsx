@@ -21,9 +21,6 @@ const Navigator = () => {
 
       <Stack.Navigator
         screenOptions={{
-          // title: () => (
-          //   <Text>Bank</Text>
-          // ) ,
           headerTitleAlign: 'center',
           headerTitle: () => (
             <>

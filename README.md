@@ -28,3 +28,7 @@ npm run test
 ![image](https://github.com/ThePowersr/Bank-Sofka/assets/87213114/a1707b24-ba99-4909-b5de-b5358f83fc71)
 ![image](https://github.com/ThePowersr/Bank-Sofka/assets/87213114/6183e5ae-9fc3-4d15-b1fa-7ed08823bb91)
 
+#### Video Crear-Eliminar
+En este video se muestra como se agregan y se eliminan productos.
+https://github.com/ThePowersr/Bank-Sofka/assets/87213114/60e0c776-7c76-4ae3-8258-532e6536165a
+

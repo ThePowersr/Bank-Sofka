@@ -38,9 +38,9 @@ const HomeScreen = ({ navigation }: Props) => {
     fetchProducts();
   }, [])
 
-  useFocusEffect(() => {
-    fetchProducts();
-  })
+  // useFocusEffect(() => {
+  //   fetchProducts();
+  // })
 
   const handleSearch = () => {
     if (debouncedSearchTerm) {

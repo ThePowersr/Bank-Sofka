@@ -32,3 +32,11 @@ npm run test
 En este video se muestra como se agregan y se eliminan productos.
 https://github.com/ThePowersr/Bank-Sofka/assets/87213114/60e0c776-7c76-4ae3-8258-532e6536165a
 
+#### Video validacion de formulario.
+En este video se muestra las validaciones de los diferentes campos en el formulario.
+Cuando se trata de poner un id ya existente al producto muestra un mensaje de error. 
+Cuando se trata de agregar el producto con campos vacios tambien muestra una alerta con el mensaje de error.
+https://github.com/ThePowersr/Bank-Sofka/assets/87213114/6a32e0aa-3cae-4695-8f16-5828b7cceb9c
+
+
+

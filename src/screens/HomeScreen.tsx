@@ -34,18 +34,18 @@ const HomeScreen = ({ navigation }: Props) => {
     }
   };
 
-  useEffect(() => {
+  useFocusEffect(() => {
     fetchProducts();
-  }, [])
+  })
 
-  // useFocusEffect(() => {
-  //   fetchProducts();
-  // })
+  useEffect(() => {
+    handleSearch();
+  }, [debouncedSearchTerm]);
 
   const handleSearch = () => {
     if (debouncedSearchTerm) {
       const search = product!.filter(item => {
-        return item.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase());
+        return item.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) || item.id.toLowerCase().includes(debouncedSearchTerm.toLowerCase());
       });
       setData(search);
     } else {
@@ -53,9 +53,6 @@ const HomeScreen = ({ navigation }: Props) => {
     }
   }
 
-  useEffect(() => {
-    handleSearch();
-  }, [debouncedSearchTerm]);
 
   return (
     <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center' }}>

@@ -16,7 +16,7 @@ const AdditionalInformationScreen = ({ navigation, route }: Props) => {
   const { name, id, logo, date_release, date_revision, description } = route.params.simpleProduct;
 
   const [visible, setVisible] = useState(false);
-  const { fadeIn, fadeOut, opacity, position, startMovingPosition } = useAnimation();
+  const { fadeIn, position, startMovingPosition } = useAnimation();
 
   const handleSubmit = async () => {
     await UseApiInstance.delete(`/bp/products?id=${id}`)
